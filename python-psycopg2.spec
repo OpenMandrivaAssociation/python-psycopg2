@@ -2,13 +2,13 @@
 
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
-Version:        2.0.6
+Version:        2.0.7
 Release:        %mkrel 1
 Group:          Development/Python
-License:        GPL
+License:        GPLv2 and ZPLv2.1 and BSD
 URL:            http://www.initd.org/software/initd/psycopg
 Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.gz
-Source1:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.gz.asc
+Source1:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.gz.sig
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
@@ -40,4 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root,-)
-%doc AUTHORS INSTALL MANIFEST examples/ ChangeLog  LICENSE  README
+%doc AUTHORS MANIFEST examples/ ChangeLog  LICENSE  README
