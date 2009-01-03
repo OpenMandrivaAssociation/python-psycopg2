@@ -2,8 +2,8 @@
 
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
-Version:        2.0.7
-Release:        %mkrel 2
+Version:        2.0.8
+Release:        %mkrel 1
 Group:          Development/Python
 License:        GPLv2 and ZPLv2.1 and BSD
 URL:            http://www.initd.org/software/initd/psycopg
@@ -13,7 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
 BuildRequires:  python-devel
-BuildRequires:  postgresql-devel 
+BuildRequires:  postgresql-devel
 BuildRequires:  python-egenix-mx-base
 
 %description
@@ -30,7 +30,7 @@ psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS"
-python setup.py build 
+python setup.py build
 
 %install
 python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
