@@ -2,7 +2,7 @@
 
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
-Version:        2.0.9
+Version:        2.0.11
 Release:        %mkrel 1
 Group:          Development/Python
 License:        GPLv2 and ZPLv2.1 and BSD
@@ -40,4 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root,-)
-%doc AUTHORS MANIFEST examples/ ChangeLog  LICENSE  README
+%doc AUTHORS examples/ ChangeLog  LICENSE  README
