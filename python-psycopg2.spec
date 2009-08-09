@@ -2,7 +2,7 @@
 
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
-Version:        2.0.11
+Version:        2.0.12
 Release:        %mkrel 1
 Group:          Development/Python
 License:        GPLv2 and ZPLv2.1 and BSD
