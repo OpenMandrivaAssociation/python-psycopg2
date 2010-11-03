@@ -3,7 +3,7 @@
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
 Version:        2.0.13
-Release:        %mkrel 2
+Release:        %mkrel 3
 Group:          Development/Python
 License:        GPLv2 and ZPLv2.1 and BSD
 URL:            http://www.initd.org/software/initd/psycopg
@@ -33,11 +33,12 @@ export CFLAGS="$RPM_OPT_FLAGS"
 python setup.py build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install --root=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root,-)
 %doc AUTHORS examples/ ChangeLog  LICENSE  README
+%py_platsitedir/psycopg2*
