@@ -9,6 +9,7 @@ License:        GPLv2 and ZPLv2.1 and BSD
 URL:            http://www.initd.org/software/initd/psycopg
 Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.gz
 Source1:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.gz.asc
+Patch0:		psycopg2-2.2.2-link.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
@@ -27,6 +28,7 @@ psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p0
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS"
