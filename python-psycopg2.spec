@@ -2,14 +2,13 @@
 
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
-Version:        2.4.1
-Release:        %mkrel 1
+Version:        2.4.4
+Release:        1
 Group:          Development/Python
 License:        GPLv2 and ZPLv2.1 and BSD
 URL:            http://www.psycopg.org/psycopg/
 Source0:        http://www.psycopg.org/psycopg/tarballs/PSYCOPG-2-4/%{module}-%{version}.tar.gz
 Patch0:		psycopg2-2.4.1-link.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
 BuildRequires:  python-devel
@@ -34,12 +33,8 @@ export CFLAGS="$RPM_OPT_FLAGS"
 python setup.py build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+python setup.py install --root=%buildroot
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS examples/ ChangeLog  LICENSE  README
 %py_platsitedir/psycopg2*
