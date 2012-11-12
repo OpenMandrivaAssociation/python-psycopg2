@@ -1,0 +1,10 @@
+--- setup.py.link	2011-05-12 03:51:31.000000000 +0200
++++ setup.py	2011-05-12 03:54:15.000000000 +0200
+@@ -507,6 +507,7 @@
+                      define_macros=define_macros,
+                      include_dirs=include_dirs,
+                      depends=depends,
++		     libraries=['m'],
+                      undef_macros=[]))
+ 
+ # Compute the direct download url.
