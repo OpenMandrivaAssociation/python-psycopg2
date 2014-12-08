@@ -11,7 +11,7 @@ Source0:	http://www.psycopg.org/psycopg/tarballs/PSYCOPG-2-4/psycopg2-%{version}
 Patch0:		psycopg2-2.4.1-link.patch
 BuildRequires:	postgresql-devel
 BuildRequires:	python-egenix-mx-base
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 # for DateTime
 Requires:	python-egenix-mx-base
 
@@ -30,13 +30,13 @@ psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 
 %build
 export CFLAGS="%{optflags}"
-python setup.py build
+%{__python2} setup.py build
 
 %install
-python setup.py install --root=%{buildroot}
+%{__python2} setup.py install --root=%{buildroot}
 
 %files
 %doc AUTHORS examples/ ChangeLog  LICENSE  README
-%{py_platsitedir}/psycopg2*
+%{py2_platsitedir}/psycopg2*
 
 
