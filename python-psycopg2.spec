@@ -36,7 +36,7 @@ export CFLAGS="%{optflags}"
 %{__python} setup.py install --root=%{buildroot}
 
 %files
-%doc AUTHORS examples/ ChangeLog  LICENSE  README
+%doc AUTHORS examples/ NEWS  LICENSE  README.rst
 %{py3_platsitedir}/psycopg2*
 
 
