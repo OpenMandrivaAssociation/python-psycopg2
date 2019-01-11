@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   psycopg2-2.7.6.tar.gz: 8817c252ed53ea548b126d7a7ca7b50e17693cd5
+sources:
+  psycopg2-2.7.6.1.tar.gz: 45e359fb2999c9608fea7832cb37a623151274e4
