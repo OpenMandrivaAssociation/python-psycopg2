@@ -12,6 +12,8 @@ Patch0:		psycopg2-2.4.1-link.patch
 BuildRequires:	postgresql-devel
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(python2)
+BuildRequires:	python2dist(setuptools)
+BuildRequires:	python3dist(setuptools)
 
 %description
 psycopg is a PostgreSQL database adapter for the Python programming
