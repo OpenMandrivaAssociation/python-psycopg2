@@ -52,10 +52,10 @@ pushd %py2dir
 %{__python2} setup.py install --root=%{buildroot}
 
 %files
-%doc AUTHORS examples/ NEWS  LICENSE  README.rst
+%doc AUTHORS NEWS  LICENSE  README.rst
 %{py3_platsitedir}/psycopg2*
 
 
 %files -n python2-%{module}
-%doc AUTHORS examples/ NEWS  LICENSE  README.rst
+%doc AUTHORS NEWS  LICENSE  README.rst
 %{py2_platsitedir}/psycopg2*
