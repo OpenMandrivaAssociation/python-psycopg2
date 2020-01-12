@@ -2,13 +2,12 @@
 
 Summary:	PostgreSQL database adapter for Python
 Name:		python-%{module}
-Version:	2.8.3
-Release:	2
+Version:	2.8.4
+Release:	1
 Group:		Development/Python
 License:	GPLv2 and ZPLv2.1 and BSD
 Url:		http://www.psycopg.org/psycopg/
-Source0:	https://files.pythonhosted.org/packages/5c/1c/6997288da181277a0c29bc39a5f9143ff20b8c99f2a7d059cfb55163e165/psycopg2-2.8.3.tar.gz
-Patch0:		psycopg2-2.4.1-link.patch
+Source0:	https://files.pythonhosted.org/packages/84/d7/6a93c99b5ba4d4d22daa3928b983cec66df4536ca50b22ce5dcac65e4e71/psycopg2-2.8.4.tar.gz
 BuildRequires:	postgresql-devel
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(python2)
@@ -33,7 +32,6 @@ PostgreSQL database adapter for Python
 
 %prep
 %setup -qn %{module}-%{version}
-%patch0 -p0
 
 pushd ..
 cp -Rp %{module}-%{version} %py2dir
