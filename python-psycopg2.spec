@@ -33,4 +33,5 @@ export CFLAGS="%{optflags}"
 
 %files
 %doc AUTHORS NEWS  LICENSE  README.rst
-#{py3_platsitedir}/psycopg2*
+%{python_sitearch}/psycopg2-%{version}-py*.*.egg-info
+%{python_sitearch}/psycopg2/
