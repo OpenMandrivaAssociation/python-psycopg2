@@ -9,7 +9,7 @@ License:	GPLv2 and ZPLv2.1 and BSD
 Url:		http://www.psycopg.org/psycopg/
 Source0:	https://files.pythonhosted.org/packages/fd/ae/98cb7a0cbb1d748ee547b058b14604bd0e9bf285a8e0cc5d148f8a8a952e/psycopg2-%{version}.tar.gz
 BuildRequires:	postgresql-devel
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python3dist(setuptools)
 
 %description
@@ -24,20 +24,14 @@ psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 %prep
 %setup -qn %{module}-%{version}
 
-
-
 %build
 export CFLAGS="%{optflags}"
 %{__python} setup.py build
 
-
-
 %install
 %{__python} setup.py install --root=%{buildroot}
 
-
-
 %files
 %doc AUTHORS NEWS  LICENSE  README.rst
-%{py3_platsitedir}/psycopg2*
-
+%{python_sitearch}/psycopg2-%{version}-py*.*.egg-info
+%{python_sitearch}/psycopg2/
