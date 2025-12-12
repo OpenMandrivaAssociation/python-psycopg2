@@ -3,7 +3,7 @@
 Summary:	PostgreSQL database adapter for Python
 Name:		python-%{module}
 Version:	2.9.3
-Release:	3
+Release:	4
 Group:		Development/Python
 License:	GPLv2 and ZPLv2.1 and BSD
 Url:		https://www.psycopg.org/psycopg/
