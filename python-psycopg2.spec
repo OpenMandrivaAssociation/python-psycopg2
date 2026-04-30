@@ -3,7 +3,7 @@
 Name:		python-psycopg2
 Summary:	PostgreSQL database adapter for Python
 Version:	2.9.12
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	LGPL-3.0-or-later
 URL:		https://www.psycopg.org/psycopg/
@@ -28,7 +28,7 @@ psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 rm -rf %{module}.egg-info
 
 %build -p
-export LDFLAGS="%{ldflags} -lpython%{pyver}"
+export LDFLAGS="%{ldflags} -lpython%{pyver} -lm"
 
 %files
 %doc AUTHORS NEWS README.rst
