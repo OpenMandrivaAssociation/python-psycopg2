@@ -1,16 +1,18 @@
 %define module psycopg2
 
+Name:		python-psycopg2
 Summary:	PostgreSQL database adapter for Python
-Name:		python-%{module}
-Version:	2.9.11
+Version:	2.9.12
 Release:	1
 Group:		Development/Python
-License:	GPLv2 and ZPLv2.1 and BSD
-Url:		https://www.psycopg.org/psycopg/
-Source0:  https://files.pythonhosted.org/packages/source/p/psycopg2/psycopg2-%{version}.tar.gz
+License:	LGPL-3.0-or-later
+URL:		https://www.psycopg.org/psycopg/
+Source0:  https://files.pythonhosted.org/packages/source/p/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+BuildSystem:	python
 BuildRequires:	postgresql-devel
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(setuptools)
+BuildRequires:	python%{pyver}dist(setuptools)
 
 %description
 psycopg is a PostgreSQL database adapter for the Python programming
@@ -21,17 +23,15 @@ being thread safe at level 2.
 
 psycopg2 is an almost complete rewrite of the psycopg 1.1.x branch.
 
-%prep
-%setup -qn %{module}-%{version}
+%prep -a
+# Remove bundled egg-info
+rm -rf %{module}.egg-info
 
-%build
-export CFLAGS="%{optflags}"
-%{__python} setup.py build
-
-%install
-%{__python} setup.py install --root=%{buildroot}
+%build -p
+export LDFLAGS="%{ldflags} -lpython%{pyver}"
 
 %files
-%doc AUTHORS NEWS  LICENSE  README.rst
-%{python_sitearch}/psycopg2-%{version}-py*.*.egg-info
-%{python_sitearch}/psycopg2/
+%doc AUTHORS NEWS README.rst
+%license LICENSE
+%{python_sitearch}/%{module}
+%{python_sitearch}/%{module}-%{version}*.*-info
